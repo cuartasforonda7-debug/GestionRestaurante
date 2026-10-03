@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+
+    "tasks": [
+        {
+            "label": "Compilar proyecto Java",
+            "type": "process",
+            "command": "javac",
+            "args": [
+                "-cp",
+                "lib\\mssql-jdbc-13.6.0.jre11.jar",
+                "-d",
+                "out",
+                "src\\dominio\\entidades\\Producto.java",
+                "src\\app\\backend\\infraestructura\\basedatos\\ConexionBD.java",
+                "src\\app\\backend\\infraestructura\\repositorio\\ProductoRepository.java",
+                "src\\app\\backend\\servicio\\ProductoService.java",
+                "src\\app\\backend\\presentacion\\controlador\\ProductoController.java",
+                "src\\app\\backend\\pruebas\\ProductoControllerPrueba.java",
+                "src\\app\\backend\\Aplicacion.java"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$javac"
+        },
+
+        {
+            "label": "Ejecutar prueba Producto",
+            "type": "process",
+            "command": "java",
+            "args": [
+                "-cp",
+                "out;lib\\mssql-jdbc-13.6.0.jre11.jar",
+                "app.backend.pruebas.ProductoRepositoryPrueba"
+            ],
+            "dependsOn": "Compilar proyecto Java",
+            "problemMatcher": []
+        },
+
+        {
+            "label": "Ejecutar aplicación",
+            "type": "process",
+            "command": "java",
+            "args": [
+                "-cp",
+                "out;lib\\mssql-jdbc-13.6.0.jre11.jar",
+                "app.backend.Aplicacion"
+            ],
+            "dependsOn": "Compilar proyecto Java",
+            "problemMatcher": []
+        }
+    ]
+}

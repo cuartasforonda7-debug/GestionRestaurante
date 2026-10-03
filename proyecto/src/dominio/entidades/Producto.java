@@ -1,5 +1,8 @@
-package src.dominio.entidades;
+package dominio.entidades;
 public class Producto {
+
+    // ATRIBUTOS!
+
     private int idProducto;
     private String nombre;
     private String descripcion;
@@ -10,11 +13,11 @@ public class Producto {
     private double stockMinimo;
     private boolean estado;
 
-    // Constructor vacío
+    // CONSTRUCTOR VACIO!
     public Producto() {
     }
 
-    // Constructor completo
+    // CONSTRUCTOR COMPLETO!
     public Producto(int idProducto, String nombre, String descripcion,
                     String unidadMedida, double costo, double precioVenta,
                     double stockActual, double stockMinimo, boolean estado) {
@@ -30,7 +33,7 @@ public class Producto {
         this.estado = estado;
     }
 
-    // Getters y Setters
+    // GETTERS Y SETTERS!
 
     public int getIdProducto() {
         return idProducto;

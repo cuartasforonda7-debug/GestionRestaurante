@@ -1,4 +1,5 @@
-package src.dominio.entidades;
+package dominio.entidades;
+
 
 public class ProductoMenu {
 

@@ -73,8 +73,16 @@ Las tecnologías utilizadas o contempladas para el desarrollo del proyecto inclu
 proyecto/
 │
 ├── README.md
+├── .classpath
 ├── .gitignore
 │
+├── .vscode/
+|   ├── settings.json
+│   ├── tasks.json
+│  
+├── lib/
+|   ├── mssql-...
+|
 ├── docs/
 │   ├── product-backlog.md
 │   ├── user-stories.md

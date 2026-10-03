@@ -1,7 +1,9 @@
-package src.dominio.entidades;
+package dominio.entidades;
 import java.time.LocalDateTime;
 
 public class Pedido {
+
+    // ATRIBUTOS!
 
     private int idPedido;
     private LocalDateTime fecha;
@@ -14,7 +16,7 @@ public class Pedido {
 
     // === CONSTRUCTOR COMPLETO ===
     public Pedido(int idPedido, LocalDateTime fecha,
-                  String estado, String observacion) {
+                    String estado, String observacion) {
 
         this.idPedido = idPedido;
         this.fecha = fecha;

@@ -42,11 +42,11 @@ Como empleado autorizado, quiero registrar productos, para mantener actualizado 
 
 ### Tareas
 
-- [ ] Definir los datos del producto.
-- [ ] Crear o ajustar la entidad Producto.
-- [ ] Implementar el registro del producto.
-- [ ] Validar los datos.
-- [ ] Probar el registro.
+- [x] Definir los datos del producto.
+- [x] Crear o ajustar la entidad Producto.
+- [x] Implementar el registro del producto.
+- [x] Validar los datos.
+- [x] Probar el registro.
 
 ---
 
@@ -117,7 +117,7 @@ Una historia se considerará completada cuando:
 | Historia | Responsable | Estado |
 |---|---|---|
 | HU-01 | Juan José | To Do |
-| HU-05 | Cristian | To Do |
+| HU-05 | Cristian | Casi Done |
 | HU-11 | Darwin | To Do |
 | HU-16 | Ricardo | To Do |
 

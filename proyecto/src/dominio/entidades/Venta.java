@@ -1,4 +1,4 @@
-package src.dominio.entidades;
+package dominio.entidades;
 import java.time.LocalDateTime;
 
 public class Venta {
