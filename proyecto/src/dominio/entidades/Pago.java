@@ -10,11 +10,8 @@ public class Pago {
     private String estado;
     private String comprobante;
 
-    // === CONSTRUCTOR VACIO ===
     public Pago() {
     }
-
-    // === CONSTRUCTOR COMPLETO ===
     public Pago(int idPago, LocalDateTime fecha, double monto,
                 String metodo, String estado, String comprobante) {
 
@@ -25,8 +22,6 @@ public class Pago {
         this.estado = estado;
         this.comprobante = comprobante;
     }
-
-    // Getters y Setters
 
     public int getIdPago() {
         return idPago;
