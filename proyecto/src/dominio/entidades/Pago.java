@@ -12,6 +12,7 @@ public class Pago {
 
     public Pago() {
     }
+
     public Pago(int idPago, LocalDateTime fecha, double monto,
                 String metodo, String estado, String comprobante) {
 
@@ -70,4 +71,10 @@ public class Pago {
     public void setComprobante(String comprobante) {
         this.comprobante = comprobante;
     }
+
+    public String getId() {
+        return String.valueOf(this.idPago);
+    }
 }
+
+
