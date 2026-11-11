@@ -26,11 +26,11 @@ Como usuario del sistema, quiero registrarme, para poder acceder a las funcional
 
 ### Tareas
 
-- [ ] Definir los datos necesarios del usuario.
-- [ ] Crear la entidad correspondiente.
-- [ ] Implementar el registro.
-- [ ] Validar los datos.
-- [ ] Probar el registro.
+- [x] Definir los datos necesarios del usuario.
+- [x] Crear la entidad correspondiente.
+- [x] Implementar el registro.
+- [x] Validar los datos.
+- [x] Probar el registro.
 
 ---
 

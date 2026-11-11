@@ -1,11 +1,10 @@
 package app.backend;
 
-import app.aplicacion.servicios.ProductoService;
-import app.backend.infraestructura.repositorio.ProductoRepository;
-import app.backend.presentacion.controlador.ProductoController;
+import app.backend.pruebas.UsuarioEmpleadoPrueba;
 
 public class Aplicacion {
     public static void main(String[] args) {
-
+        // Inicia el menú interactivo de la Épica 1 (Usuarios, Roles y Control de Permisos)
+        UsuarioEmpleadoPrueba.main(args);
     }
 }
