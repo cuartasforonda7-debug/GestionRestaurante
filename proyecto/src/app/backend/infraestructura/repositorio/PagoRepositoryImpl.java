@@ -12,11 +12,11 @@ public class PagoRepositoryImpl implements PagoRepositoryPort {
 
     @Override
     public void guardar(Pago pago) {
-        // Si no tiene ID, le asignamos uno
+
         if (pago.getIdPago() == 0) {
             pago.setIdPago(contador++);
         }
-        // Si ya existe, lo actualizamos
+
         for (int i = 0; i < baseDatos.size(); i++) {
             if (baseDatos.get(i).getId().equals(pago.getId())) {
                 baseDatos.set(i, pago);
