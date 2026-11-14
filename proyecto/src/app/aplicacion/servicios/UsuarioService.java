@@ -5,6 +5,7 @@ import dominio.entidades.Usuario;
 import dominio.excepciones.CredencialesInvalidasException;
 import dominio.excepciones.EntidadNoEncontradaException;
 import dominio.excepciones.UsuarioYaExisteException;
+import dominio.puertos.entrada.GestionarUsuarioPort;
 import dominio.puertos.salida.RolRepositoryPort;
 import dominio.puertos.salida.UsuarioRepositoryPort;
 import dominio.seguridad.SeguridadUtil;
@@ -13,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class UsuarioService {
+public class UsuarioService implements GestionarUsuarioPort {
 
     private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
     private static final int LONGITUD_MINIMA_PASSWORD = 6;

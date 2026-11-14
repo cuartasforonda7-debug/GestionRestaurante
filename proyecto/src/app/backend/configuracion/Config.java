@@ -4,6 +4,7 @@ import app.aplicacion.servicios.ControlAccesoService;
 import app.aplicacion.servicios.EmpleadoService;
 import app.aplicacion.servicios.ProductoService;
 import app.aplicacion.servicios.UsuarioService;
+import app.backend.presentacion.controlador.UsuarioController;
 import app.backend.infraestructura.adaptadores.EmpleadoRepositorySQLAdapter;
 import app.backend.infraestructura.adaptadores.ProductoRepositoryAdapter;
 import app.backend.infraestructura.adaptadores.RolRepositorySQLAdapter;
@@ -60,5 +61,16 @@ public class Config {
         UsuarioRepositoryPort usuarioRepo = new UsuarioRepositorySQLAdapter();
         RolRepositoryPort rolRepo = new RolRepositorySQLAdapter();
         return new EmpleadoService(empleadoRepo, usuarioRepo, rolRepo);
+    }
+
+    // ==========================================
+    // CONTROLADORES (Capa de Presentación)
+    // ==========================================
+    public UsuarioController obtenerUsuarioControllerEnMemoria() {
+        return new UsuarioController(obtenerUsuarioServiceEnMemoria(), obtenerEmpleadoServiceEnMemoria());
+    }
+
+    public UsuarioController obtenerUsuarioControllerSQL() {
+        return new UsuarioController(obtenerUsuarioServiceSQL(), obtenerEmpleadoServiceSQL());
     }
 }

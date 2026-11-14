@@ -15,6 +15,7 @@
                 "src\\dominio\\entidades\\*.java",
                 "src\\dominio\\seguridad\\*.java",
                 "src\\dominio\\excepciones\\*.java",
+                "src\\dominio\\puertos\\entrada\\*.java",
                 "src\\dominio\\puertos\\salida\\*.java",
                 "src\\app\\aplicacion\\servicios\\*.java",
                 "src\\app\\backend\\infraestructura\\basedatos\\*.java",

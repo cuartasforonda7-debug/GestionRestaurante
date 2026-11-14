@@ -4,6 +4,7 @@ import dominio.entidades.Empleado;
 import dominio.entidades.Rol;
 import dominio.excepciones.EntidadNoEncontradaException;
 import dominio.excepciones.UsuarioYaExisteException;
+import dominio.puertos.entrada.GestionarEmpleadoPort;
 import dominio.puertos.salida.EmpleadoRepositoryPort;
 import dominio.puertos.salida.RolRepositoryPort;
 import dominio.puertos.salida.UsuarioRepositoryPort;
@@ -12,7 +13,7 @@ import dominio.seguridad.SeguridadUtil;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class EmpleadoService {
+public class EmpleadoService implements GestionarEmpleadoPort {
 
     private final EmpleadoRepositoryPort empleadoRepository;
     private final UsuarioRepositoryPort usuarioRepository;
