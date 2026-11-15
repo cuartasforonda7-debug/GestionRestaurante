@@ -1,22 +1,30 @@
 {
     "version": "2.0.0",
-
     "tasks": [
         {
             "label": "Compilar proyecto Java",
             "type": "process",
             "command": "javac",
             "args": [
+                "-encoding",
+                "UTF-8",
                 "-cp",
                 "lib\\mssql-jdbc-13.6.0.jre11.jar",
                 "-d",
                 "out",
-                "src\\dominio\\entidades\\Producto.java",
-                "src\\app\\backend\\infraestructura\\basedatos\\ConexionBD.java",
-                "src\\app\\backend\\infraestructura\\repositorio\\ProductoRepository.java",
-                "src\\app\\backend\\servicio\\ProductoService.java",
-                "src\\app\\backend\\presentacion\\controlador\\ProductoController.java",
-                "src\\app\\backend\\pruebas\\ProductoControllerPrueba.java",
+                "src\\dominio\\entidades\\*.java",
+                "src\\dominio\\seguridad\\*.java",
+                "src\\dominio\\excepciones\\*.java",
+                "src\\dominio\\puertos\\entrada\\*.java",
+                "src\\dominio\\puertos\\salida\\*.java",
+                "src\\app\\aplicacion\\servicios\\*.java",
+                "src\\app\\backend\\infraestructura\\basedatos\\*.java",
+                "src\\app\\backend\\infraestructura\\excepciones\\*.java",
+                "src\\app\\backend\\infraestructura\\adaptadores\\*.java",
+                "src\\app\\backend\\infraestructura\\adaptadores\\memoria\\*.java",
+                "src\\app\\backend\\configuracion\\*.java",
+                "src\\app\\backend\\presentacion\\controlador\\*.java",
+                "src\\app\\backend\\pruebas\\*.java",
                 "src\\app\\backend\\Aplicacion.java"
             ],
             "group": {
@@ -25,22 +33,32 @@
             },
             "problemMatcher": "$javac"
         },
-
         {
-            "label": "Ejecutar prueba Producto",
+            "label": "Ejecutar Usuarios y Roles (Épica 1)",
             "type": "process",
             "command": "java",
             "args": [
                 "-cp",
                 "out;lib\\mssql-jdbc-13.6.0.jre11.jar",
-                "app.backend.pruebas.ProductoRepositoryPrueba"
+                "app.backend.pruebas.UsuarioEmpleadoPrueba"
             ],
             "dependsOn": "Compilar proyecto Java",
             "problemMatcher": []
         },
-
         {
-            "label": "Ejecutar aplicación",
+            "label": "Ejecutar prueba Producto (Épica 2)",
+            "type": "process",
+            "command": "java",
+            "args": [
+                "-cp",
+                "out;lib\\mssql-jdbc-13.6.0.jre11.jar",
+                "app.backend.pruebas.ProductoServicePrueba"
+            ],
+            "dependsOn": "Compilar proyecto Java",
+            "problemMatcher": []
+        },
+        {
+            "label": "Ejecutar aplicación general",
             "type": "process",
             "command": "java",
             "args": [

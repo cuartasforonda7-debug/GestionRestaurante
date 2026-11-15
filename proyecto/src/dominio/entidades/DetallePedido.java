@@ -11,16 +11,20 @@ public class DetallePedido {
     public DetallePedido() {
     }
 
-    // === CONSTRUCTOR COMPLETO ===
-    public DetallePedido(int idDetallePedido, int cantidad,
-                            double precioUnitario) {
-
+    // === CONSTRUCTOR PARCIAL ===
+    public DetallePedido(int idDetallePedido, int cantidad, double precioUnitario) {
         this.idDetallePedido = idDetallePedido;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
     }
 
-    // Getters y Setters
+    // === CONSTRUCTOR COMPLETO ===
+    public DetallePedido(int idDetallePedido, int cantidad, double precioUnitario, ProductoComercial productoComercial) {
+        this(idDetallePedido, cantidad, precioUnitario);
+        this.productoComercial = productoComercial;
+    }
+
+    // === GETTERS Y SETTERS ===
 
     public int getIdDetallePedido() {
         return idDetallePedido;
@@ -44,5 +48,24 @@ public class DetallePedido {
 
     public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
+    }
+
+    public ProductoComercial getProductoComercial() {
+        return productoComercial;
+    }
+
+    public void setProductoComercial(ProductoComercial productoComercial) {
+        this.productoComercial = productoComercial;
+    }
+
+    // === LOGICA DE DOMINIO ===
+    public double calcularSubtotal() {
+        return this.cantidad * this.precioUnitario;
+    }
+
+    @Override
+    public String toString() {
+        String nombreProd = (productoComercial != null) ? productoComercial.getNombre() : "Sin producto";
+        return cantidad + "x " + nombreProd + " ($" + precioUnitario + " c/u) = $" + calcularSubtotal();
     }
 }

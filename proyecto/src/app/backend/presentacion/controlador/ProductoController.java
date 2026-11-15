@@ -1,23 +1,24 @@
 package app.backend.presentacion.controlador;
-import app.aplicacion.servicios.ProductoService;
+
 import dominio.entidades.Producto;
+import dominio.puertos.entrada.GestionarProductoPort;
 
 public class ProductoController {
-    private ProductoService service;
+
+    private final GestionarProductoPort service;
     
-    public ProductoController (ProductoService service) {
+    public ProductoController(GestionarProductoPort service) {
         this.service = service;
     }
 
     public void registrarProducto(Producto producto) {
-        /*   try {
+        try {
             service.registrarProducto(producto);
-            System.out.println("Producto registrado correctamente!");
+            System.out.println(">> Producto registrado correctamente!");
         } catch (IllegalArgumentException e) {
-        System.out.println(e.getMessage());
-        } catch (SQLException e) {
-            System.out.println("Problema de la base de datos.");
+            System.err.println(">> Error de validación: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println(">> Problema al registrar el producto: " + e.getMessage());
         }
-            */
     }
 }

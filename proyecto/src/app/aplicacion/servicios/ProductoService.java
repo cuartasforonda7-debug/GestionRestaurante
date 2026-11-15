@@ -1,24 +1,31 @@
 package app.aplicacion.servicios;
+
 import dominio.entidades.Producto;
+import dominio.puertos.entrada.GestionarProductoPort;
 import dominio.puertos.salida.ProductoRepositoryPort;
-public class ProductoService {
 
-    private ProductoRepositoryPort repositoryPort;
+public class ProductoService implements GestionarProductoPort {
 
-    // INYECCION POR CONSTRUCTOR!
+    private final ProductoRepositoryPort repositoryPort;
+
+    // INYECCION POR CONSTRUCTOR
     public ProductoService(ProductoRepositoryPort repositoryPort) {
         this.repositoryPort = repositoryPort;
     }
 
-        // METODO REGISTRAR PRODUCTO
+    // METODO REGISTRAR PRODUCTO
+    @Override
     public void registrarProducto(Producto producto) {
         validarProducto(producto);
-
         repositoryPort.registrarProducto(producto);
     }
 
-    // METODO VALIDAR PRODUCTO!    
+    // METODO VALIDAR PRODUCTO
     private void validarProducto(Producto producto) {
+        if (producto == null) {
+            throw new IllegalArgumentException("El producto no puede ser nulo.");
+        }
+
         if (producto.getNombre() == null || producto.getNombre().isBlank()) {
             throw new IllegalArgumentException("El nombre del producto es obligatorio!");
         }
@@ -38,7 +45,5 @@ public class ProductoService {
         if (producto.getStockMinimo() < 0) {
             throw new IllegalArgumentException("El stock minimo no puede ser negativo");
         }
-
     }
-
 }
